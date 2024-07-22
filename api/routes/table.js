@@ -1,13 +1,20 @@
-const express = require("express");
-const { Booking, getBooking, getBookings, deleteBooking , updateBooking} = require("../controllers/table.js");
-
+const express = require('express');
 const router = express.Router();
+const {
+    createTable,
+    getTable,
+    getTables,
+    findTableByType,
+    updateTable,
+    deleteTable
+} = require('../controllers/tableController');
 
-router.put("/booking/:id", Booking);
-router.get("/booking/:idUser", getBooking);
-router.get("/booking", getBookings);
-router.delete("/booking/:idBooking", deleteBooking);
-router.put("/booking/update/:idBooking", updateBooking);
+router.post('/', createTable);
+router.put('/:id', updateTable);
+router.delete('/:id', deleteTable);
+router.get('/find/:id', getTable);
 
+router.get('/', getTables);
+router.get('/type/:type', findTableByType);
 
 module.exports = router;

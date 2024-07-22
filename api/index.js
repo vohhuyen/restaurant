@@ -6,7 +6,11 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const usersRoute = require("./routes/user.js");
 const authRoute = require("./routes/auth.js");
-const tableRoute = require("./routes/table.js");
+const bookingRoute = require("./routes/booking.js");
+const dishRoute = require('./routes/dish.js');
+const newRoute = require('./routes/new.js');
+const tableRoute = require('./routes/table.js');
+
 
 const app = express()
 dotenv.config()
@@ -33,7 +37,11 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/users", usersRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/booking", bookingRoute);
+app.use("/api/dish", dishRoute);
+app.use("/api/new", newRoute);
 app.use("/api/table", tableRoute);
+
 
 app.use((err,req,res,next)=>{
     const errorStatus = err.status || 500
