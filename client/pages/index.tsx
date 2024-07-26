@@ -1,10 +1,12 @@
 import React from 'react';
-import Navbar from '@/components/Navbar';
+import Menu from '@/components/Menu';
+import Chef from '@/components/Chef';
 
 const Home = () => {
   return (
     <div>
-        <Navbar></Navbar>
+        <Menu></Menu>
+        <Chef></Chef>
     </div>
   )
 }

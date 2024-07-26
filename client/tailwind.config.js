@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         'custom-brown': '#715b3e',
         'custom-dark': '#0f1d22',
+        'custom-yellow': '#c9ab81',
       },
       transitionDuration: {
         '500': '500ms',
