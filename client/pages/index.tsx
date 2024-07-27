@@ -2,6 +2,9 @@
 // import CardDish from '../components/CardDish';
 // import LineEffect from '../components/LineEffect';
 // import Slide123 from '../components/Slide123';
+import React from 'react';
+import Menu from '@/components/Menu';
+import Chef from '@/components/Chef';
 import Thu from '../components/Thu';
 
 export default function Home() {
@@ -16,3 +19,4 @@ export default function Home() {
     </div>
   );
 }
+
