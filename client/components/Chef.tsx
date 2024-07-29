@@ -8,12 +8,12 @@ export default function Chef() {
     <img src='/images/main-img-6.jpg' width={'20%'} className='flex justify-center'></img>
     </div>
         
-        <div className='flex uppercase justify-center mt-4 text-xl text-custom-yellow'>
-        <p>m i c h a e l </p>
-        <p className='ml-4'>g o r d o n</p>
+        <div className='flex tracking-[5px]  uppercase justify-center mt-4 text-xl text-custom-yellow'>
+        <p>michael </p>
+        <p className='ml-4'>gordon</p>
 
         </div>
-        <div className='flex justify-center mt-2 text-white'>
+        <div className='flex tracking-[5px]  justify-center mt-2 text-white'>
         <p>Assistant</p>
         <p className='ml-2'>Chef</p>
         </div>

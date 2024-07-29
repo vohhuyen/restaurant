@@ -1,22 +1,31 @@
-// import Footer from '../components/Footer';
-// import CardDish from '../components/CardDish';
-// import LineEffect from '../components/LineEffect';
-// import Slide123 from '../components/Slide123';
+import Footer from '../components/Footer';
+import CardDish from '../components/CardDish';
+import LineEffect from '../components/LineEffect';
+import Chef from '../components/Chef';
 import React from 'react';
 import Menu from '@/components/Menu';
-import Chef from '@/components/Chef';
-import Thu from '../components/Thu';
+import Navbar  from '@/components/Navbar ';
+import Slide from '@/components/Slide';
+
+
 
 export default function Home() {
   return (
     <div>
-      {/* Nội dung khác của trang */}
+
       {/* <Footer /> */}
       {/* <CardDish /> */}
       {/* <LineEffect /> */}
-      {/* <Thu/> */}
-      <Thu/>
+      <Chef/>
+      {/* <Slide/> */}
+      {/* <Menu/> */}
+      {/* <Chef/> */}
+      {/* <Navbar /> */}
+      {/* <Slide123/> */}
     </div>
   );
 }
+
+
+
 
