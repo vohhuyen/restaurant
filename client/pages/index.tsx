@@ -1,6 +1,5 @@
 import Footer from '../components/Footer';
 import CardDish from '../components/CardDish';
-import LineEffect from '../components/LineEffect';
 import Chef from '../components/Chef';
 import React from 'react';
 import Menu from '@/components/Menu';
@@ -15,11 +14,10 @@ export default function Home() {
 
       {/* <Footer /> */}
       {/* <CardDish /> */}
-      {/* <LineEffect /> */}
-      <Chef/>
+      {/* <Chef/> */}
       {/* <Slide/> */}
       {/* <Menu/> */}
-      {/* <Chef/> */}
+     
       {/* <Navbar /> */}
       {/* <Slide123/> */}
     </div>
