@@ -6,9 +6,9 @@ import Blog from '@/components/auth/blog';
 
 const Home = () => {
   const blogData = {
-    heroImage: "/path/to/hero-image.jpg",
-    heroTitle: "Welcome to Our Blog",
-    heroDescription: "Discover the latest news and updates.",
+    blogImage: "/path/to/blog-image.jpg",
+    blogTitle: "Welcome to Our Blog",
+    blogDescription: "Discover the latest news and updates.",
     menuItems: [
       { id: 1, name: "Chocolate Cake", description: "Delicious and rich chocolate cake", image: "/path/to/cake-image.jpg" },
       { id: 2, name: "Vanilla Ice Cream", description: "Creamy and smooth vanilla ice cream", image: "/path/to/ice-cream-image.jpg" }

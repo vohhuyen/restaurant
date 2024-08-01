@@ -3,9 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 
 const Blog = ({
-  heroImage,
-  heroTitle,
-  heroDescription,
+  blogImage,
+  blogTitle,
+  blogDescription,
   menuItems = [],
   aboutUs,
   galleryImages = [],
@@ -14,11 +14,6 @@ const Blog = ({
 }) => {
   return (
     <div className="blog">
-      <section className="hero">
-        <img src={heroImage} alt="Hero image" />
-        <h2>{heroTitle}</h2>
-        <p>{heroDescription}</p>
-      </section>
 
       <section className="menu">
         <h2>Menu</h2>
