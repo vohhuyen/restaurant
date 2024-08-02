@@ -93,9 +93,9 @@ const Footer = () => {
         }
       `}</style>
       <footer className="bg-black flex justify-center ">
-        <div className="footer-content text-center py-[5%]">
+        <div className="footer-content text-center py-[12.5%]">
           <div className="logo-footer mb-[36px]">
-            <svg className="w-20 h-20 my-auto mx-auto" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="34.875px" height="46.938px" viewBox="0 0 34.875 46.938" enableBackground="new 0 0 34.875 46.938" xmlSpace="preserve">
+            <svg className="w-[10%] h-[10%] my-auto mx-auto" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="34.875px" height="46.938px" viewBox="0 0 34.875 46.938" enableBackground="new 0 0 34.875 46.938" xmlSpace="preserve">
               <polyline fill="none" stroke="#C9AB81" strokeMiterlimit="10" points="0.5,0.003 0.5,36.438 22.875,36.438"></polyline>
               <polyline fill="none" stroke="#C9AB81" strokeMiterlimit="10" points="6.5,5.003 6.5,41.438 28.875,41.438"></polyline>
               <polyline fill="none" stroke="#C9AB81" strokeMiterlimit="10" points="12.5,10.003 12.5,46.438 34.875,46.438"></polyline>
