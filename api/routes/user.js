@@ -1,5 +1,5 @@
 const express = require("express");
-const { updateUser,deleteUser,getUser,getUsers } = require("../controllers/users.js");
+const { updateUser,deleteUser,getUser,getUsers, getUserByName } = require("../controllers/users.js");
 const { verifyAdmin, verifyUser } = require("../utils/verifyToken.js");
 
 const router = express.Router();
@@ -11,5 +11,7 @@ router.delete("/:id",verifyUser, deleteUser);
 router.get("/:id",verifyUser, getUser);
 //GET ALL
 router.get("/",verifyAdmin, getUsers);
+// GET BY NAME
+router.get("/search/:name", verifyAdmin, getUserByName);
 
 module.exports = router;

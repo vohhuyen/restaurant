@@ -1,21 +1,44 @@
-const User = require("../models/User.js")
+const User = require("../models/User.js");
+const multer = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname)); // Tạo tên file duy nhất
+    }
+});
+const upload = multer({ storage: storage });
 const updateUser = async (req, res, next) => {
     try {
-        const updatedUser = await User.findByIdAndUpdate(
-            req.params.id,              
-            { $set: req.body },         
-            { new: true, runValidators: true }  
-        );
+        upload.single('img')(req, res, async function (err) {
+            if (err) {
+                return next(err);
+            }
+            const updateData = { ...req.body};
+            if (req.file) {
+                const filePath = req.file.path.replace(/\\/g, '/');
+                updateData.img = filePath;            
+            }
+            const updatedUser = await User.findByIdAndUpdate(
+                req.params.id,
+                { $set: updateData },
+                { new: true, runValidators: true }
+            );
 
-        if (!updatedUser) {
-            return res.status(404).json("User not found.");
-        }
+            if (!updatedUser) {
+                return res.status(404).json("User not found.");
+            }
 
-        res.status(200).json(updatedUser);
-    } catch (err) {
-        next(err);
+            res.json(updatedUser);
+        });
+    } catch (error) {
+        next(error);
     }
 };
+
 
 
 const deleteUser = async (req, res, next) => {
@@ -44,10 +67,19 @@ const getUsers = async (req, res, next) => {
         next(err);
     }
 };
+const getUserByName = async (req, res, next) => {
+    try {
+        const users = await User.find({ name: { $regex: req.params.name, $options: 'i' } });
+        res.status(200).json(users);
+    } catch (err){
+        next(err);
+    }
+};
 
 module.exports = {
     updateUser,
     deleteUser,
     getUser,
     getUsers,
+    getUserByName,
 };

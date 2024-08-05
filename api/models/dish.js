@@ -1,7 +1,6 @@
 
 const mongoose = require('mongoose');
-// const { Schema } = mongoose;
-
+const { Schema } = mongoose;
 
 // Define the sub-schema for evalue
 const evalueSchema = new mongoose.Schema({
@@ -13,7 +12,7 @@ const evalueSchema = new mongoose.Schema({
 const DishSchema = new mongoose.Schema({
     name: { type: String, required: true },
     chef: {
-        type:[String],
+        type: [Schema.Types.ObjectId],
         require: true
     },
     description: {
