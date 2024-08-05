@@ -1,12 +1,15 @@
-import Footer from '../components/Footer';
+
+import Footer from '../components/layout/Footer';
 import CardDish from '../components/CardDish';
 import Chef from '../components/Chef';
 import React from 'react';
 import Menu from '@/components/Menu';
-import Navbar  from '@/components/Navbar ';
+import Navbar  from '@/components/layout/Navbar ';
 import Slide from '@/components/Slide';
-import BookingPage from '@/components/BookingPage';
-
+import Booking from '@/pages/Booking';
+import Layout from '@/components/layout';
+import Blog from '@/components/blog';
+import Login from '@/components/login';
 
 
 export default function Home() {
@@ -18,9 +21,11 @@ export default function Home() {
       {/* <Chef/> */}
       {/* <Slide/> */}
       {/* <Menu/> */}
-     <BookingPage/>
+     {/* <Booking/> */}
+     {/* <Blog/> */}
+     <Login />
       {/* <Navbar /> */}
-      {/* <Slide123/> */}
+      {/* <Layout/> */}
     </div>
   );
 }
