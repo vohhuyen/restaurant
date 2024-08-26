@@ -12,11 +12,9 @@ export const CREATE_CHEF_ENDPOINT = `${ process.env.NEXT_PUBLIC_URL }/chef`;
 export const UPDATE_CHEF_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_URL }/chef/${id}`;
 export const DELETE_CHEF_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_URL }/chef/${id}`;
 export const SEARCH_CHEF_ENDPOINT = (name: string) => `${ process.env.NEXT_PUBLIC_URL }/chef/search/${name}`;
-
+export const GET_CHEF_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_URL }/chef/${id}`;
 
 export const GET_DISHS_ENDPOINT = `${ process.env.NEXT_PUBLIC_URL }/dish`;
-
-
 
 export const GET_BOOKINGS_ENDPOINT = `${ process.env.NEXT_PUBLIC_URL }/table/booking`;
 export const GET_BOOKING_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_URL }/table/booking/${id}`;
@@ -24,12 +22,12 @@ export const CREATE_BOOKING_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_
 export const UPDATE_BOOKING_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_URL }/table/booking/update/${id}`;
 export const DELETE_BOOKING_ENDPOINT = (id: any) => `${ process.env.NEXT_PUBLIC_URL }/table/booking/${id}`;
 
-
-
 export const GET_TABLES_ENDPOINT = `${ process.env.NEXT_PUBLIC_URL }/table`;
 
-// dùng cái này để gọi api nhé
-// cái này là lấy hết news
 export const GET_NEWS_ENDPOINT = `${ process.env.NEXT_PUBLIC_URL }/new`; 
-// cái này  lấy theo id 
+
 export const GET_NEW_ENDPOINT = (id:any) => `${ process.env.NEXT_PUBLIC_URL }/new/find/${id}`;
+
+export const GET_PROFILE_USE = `${ process.env.NEXT_PUBLIC_URL }/users/profile/user`;
+
+export const GET_TABLE_ENDPOINT = (id:any) => `${ process.env.NEXT_PUBLIC_URL }/table/find/${id}`;

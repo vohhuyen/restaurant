@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         'open-sans-condensed': ['Open Sans Condensed', 'sans-serif'],
         'dancing-script': ['"Dancing Script"', 'cursive'], 
+        'miniver': ['Miniver', 'sans-serif'],
       },
       colors: {
         'custom-brown': '#715b3e',
@@ -24,6 +25,15 @@ module.exports = {
       },
       borderColor: {  
         'custom-yellow': '#c9ab81',
+      },
+      keyframes: {
+        draw: {
+          '0%': { strokeDashoffset: 1000 },
+          '100%': { strokeDashoffset: 0 },
+        },
+      },
+      animation: {
+        draw: 'draw 4s ease-in-out forwards',
       },
     },
   },

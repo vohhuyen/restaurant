@@ -4,9 +4,14 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const dishRoute = require('./routes/dish');
-const newRoute = require('./routes/new');
-// const blogRoute = require('./routes/blog');
+const usersRoute = require("./routes/user.js");
+const authRoute = require("./routes/auth.js");
+const bookingRoute = require("./routes/booking.js");
+const dishRoute = require('./routes/dish.js');
+const newRoute = require('./routes/new.js');
+const tableRoute = require('./routes/table.js');
+const chefRoute = require('./routes/chef.js');
+const path = require('path');
 
 
 const app = express()
@@ -28,32 +33,25 @@ mongoose.connection.on("connected", ()=>{
     console.log("mongoDB connected!")
 });
 
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true, 
+};
+app.use(cors(corsOptions));
+
+
 //middleware
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+
+app.use("/api/users", usersRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/booking", bookingRoute);
 app.use("/api/dish", dishRoute);
 app.use("/api/new", newRoute);
-// app.use("/api/blog", blogRoute);
-
-
-const News = mongoose.model('News', new mongoose.Schema({
-    title: String,
-    content: String,
-    date: Date,
-  }));
-
-app.get('/api/news', async (req, res) => {
-    try {
-      // Truy xuất tất cả các tin tức từ bảng 'news'
-      const newsList = await News.find({});
-      // Gửi danh sách tin tức dưới dạng JSON
-      res.json(newsList);
-    } catch (error) {
-      // Xử lý lỗi nếu có
-      res.status(500).json({ message: 'Lỗi khi lấy dữ liệu tin tức', error });
-    }
-  });
+app.use("/api/table", tableRoute);
+app.use("/api/chef", chefRoute);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 app.use((err,req,res,next)=>{

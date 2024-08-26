@@ -6,7 +6,8 @@ const {
     getDishs,
     findDishByType,
     updateDish,
-    deleteDish
+    deleteDish,
+    getTypeDish
 } = require('../controllers/dishController');
 
 router.post('/', createDish);
@@ -16,6 +17,7 @@ router.get('/find/:id', getDish);
 
 router.get('/', getDishs);
 router.get('/type/:type', findDishByType);
+router.get('/typedish', getTypeDish);
 
 module.exports = router;
 

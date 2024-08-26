@@ -3,7 +3,9 @@ import Menu from '@/components/Menu';
 import Chef from '@/components/Chef';
 // import Login from '@/components/auth/login';
 import Blog from '@/components/Blog';
-// import BlogDetails from '@/components/BlogDetails';
+import DishComponent from '@/components/DishComponent';
+import HomeComponents from '@/components/HomeComponents';
+import Blogclassic from './blog';
 
 
 const Home = () => {
@@ -12,8 +14,10 @@ const Home = () => {
         {/* <Menu></Menu>
         <Chef></Chef> */}
         {/* <Login></Login> */}
-        <Blog />
-        {/* <BlogDetails /> */}
+        {/* <Blog /> */}
+        {/* <DishComponent selectedCategory={''} /> */}
+        {/* <Blogclassic></Blogclassic> */}
+        <HomeComponents />
     </div>
   )
 }

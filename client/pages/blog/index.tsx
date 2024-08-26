@@ -1,10 +1,13 @@
 import React from 'react';
-import BlogComponent from '@/components/Blog';
+import DishComponent from '@/components/DishComponent';
+import Blogclassic from '../blog';
 
 const BlogIndex = () => {
   return (
     <div>
-      <BlogComponent />
+      <Blogclassic />
+      <DishComponent selectedCategory={''} />
+
     </div>
   );
 };
