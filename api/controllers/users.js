@@ -1,6 +1,7 @@
 const User = require("../models/User.js");
 const multer = require('multer');
 const path = require('path');
+const jwt = require("jsonwebtoken");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -75,6 +76,18 @@ const getUserByName = async (req, res, next) => {
         next(err);
     }
 };
+const getUserProfile = async (req, res, next) => {
+    try {
+        const token = req.cookies.auth_token || req.headers.authorization.split(" ")[1];
+        if (!token) return next(createError(401, "You are not authenticated!"));
+        const decoded = jwt.verify(token, process.env.JWT);
+                const user = await User.findById(decoded.id).select("-password"); 
+        if (!user) return next(createError(404, "User not found!"));
+        res.status(200).json(user);
+    } catch (err) {
+        next(err);
+    }
+}
 
 module.exports = {
     updateUser,
@@ -82,4 +95,5 @@ module.exports = {
     getUser,
     getUsers,
     getUserByName,
+    getUserProfile
 };

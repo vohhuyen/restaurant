@@ -6,7 +6,10 @@ const {
     getTables,
     findTableByType,
     updateTable,
-    deleteTable
+    deleteTable,
+    getTypeTable,
+    findTableByName,
+    getTableByArea
 } = require('../controllers/tableController');
 
 router.post('/', createTable);
@@ -16,5 +19,9 @@ router.get('/find/:id', getTable);
 
 router.get('/', getTables);
 router.get('/type/:type', findTableByType);
+router.get('/type', getTypeTable);
+router.get('/findbyname/:name', findTableByName)
+router.get('/areawithtable', getTableByArea)
+
 
 module.exports = router;

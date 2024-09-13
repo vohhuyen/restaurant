@@ -13,7 +13,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({children}) => {
   return (
-    <div className="nav-md relative z-[1000]">
+    <div className="nav-md relative bg-black ">
 
                <div className=" w-px z-50 border-l border-custom-brown absolute left-28 h-full"></div>
                 <div className=" w-px z-50 border-l border-custom-brown absolute right-28 top-0 h-full"></div>
@@ -77,7 +77,7 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                     w-full border-t border-custom-brown absolute ">
 
                         
-                        <div className=" flex items-center justify-center space-x-2 my-[210px]  ">
+                        {/* <div className=" flex items-center justify-center space-x-2 my-[210px]  ">
                           
                             <svg className="mx-[4px]" xmlns="http://www.w3.org/2000/svg" width="41.125" height="9.146">
                                 <path fill="none" stroke="#9C7C57" stroke-miterlimit="10" d="M40.881 8.576L20.562.591.244 8.576">
@@ -100,7 +100,7 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                                 </path>
                             </svg>
 
-                        </div>
+                        </div> */}
                     </div>
                 {/* </header> */}
 

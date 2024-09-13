@@ -11,6 +11,8 @@ const dishRoute = require('./routes/dish.js');
 const newRoute = require('./routes/new.js');
 const tableRoute = require('./routes/table.js');
 const chefRoute = require('./routes/chef.js');
+const areaRoute = require('./routes/area.js');
+
 const path = require('path');
 
 
@@ -51,6 +53,7 @@ app.use("/api/dish", dishRoute);
 app.use("/api/new", newRoute);
 app.use("/api/table", tableRoute);
 app.use("/api/chef", chefRoute);
+app.use("/api/area", areaRoute);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 

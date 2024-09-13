@@ -1,6 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Button from './element/Button';
+import Layout from '@/components/layout';
 
 const ImgSlide1 = styled.div`
 height:750px; 
@@ -279,6 +280,7 @@ const BannerHome = () => {
     }
 
   return (
+    <Layout>
     <div className="bg-black">
         
         <div className="relative h-[1000px] w-full z-[1]">
@@ -392,6 +394,7 @@ const BannerHome = () => {
 
         </div>
     </div>
+    </Layout>
   );
 }
 

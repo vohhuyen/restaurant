@@ -193,8 +193,8 @@ const Blog = () => {
                   <p>Read</p>
                   <p className="ml-2">More</p>
                 </div>
-                <div className="border-t w-20"></div>
-                <div className="border-t w-20 mt-1"></div>
+                <span className={` border border-[#C9AB81] mt-1 block w-full`}></span>
+                <span className={` border border-[#C9AB81] mt-1 block w-full`}></span>
 
               </div>
             </div>

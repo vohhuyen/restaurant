@@ -17,6 +17,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const register = async (req, res, next) => {
+    console.log("body", req.body);
     try {
         upload.single('img')(req, res, async function (err) {
             if (err) {
@@ -32,7 +33,7 @@ const register = async (req, res, next) => {
             });
 
             await newUser.save();
-            res.status(200).send("User has been created.");
+            res.status(200).json({ newUser });
         });
     } catch (err) {
         next(err);
@@ -41,12 +42,12 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
     try {
-        const user = await User.findOne({ name: req.body.name });
+        const user = await User.findOne({ email: req.body.email });
         if (!user) return next(createError(404, "User not found!"));
 
         const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password);
         if (!isPasswordCorrect)
-            return next(createError(400, "Wrong password or username!"));
+            return next(createError(400, "Wrong password or email!"));
 
         const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT);
 
@@ -62,8 +63,17 @@ const login = async (req, res, next) => {
         next(err);
     }
 };
-
+const checkEmailExists = async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email }); // Tìm kiếm người dùng với email
+    if (user) {
+      return res.status(200).json({ exists: true });
+    }
+    return res.status(200).json({ exists: false });
+  };
+  
 module.exports = {
     register,
     login,
+    checkEmailExists
 };

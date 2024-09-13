@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import Layout from '@/components/layout';
 const MenuItem = () => {
   return (
+    <Layout>
     <div className="p-4">
       <div className="flex items-center border-gray-600 pb-2">
         <div className="text-lg font-bold text-yellow-100">
@@ -16,6 +18,8 @@ const MenuItem = () => {
         Classic greek salad, barrel aged feta cheese, bread
       </div>
     </div>
+
+    </Layout>
   );
 };
 export default function Menu() {
