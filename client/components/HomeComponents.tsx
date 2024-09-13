@@ -485,12 +485,12 @@ const HomeComponents = () => {
       >
         {!isVideoVisible ? (
           <div
-            className="flex items-center justify-center w-16 h-16 rounded-full border-2 border-white hover:bg-[#c9ab81] cursor-pointer"
+            className="flex items-center justify-center w-16 h-16 rounded-full border-2 hover:bg-[#c9ab81] border-[#c9ab81] cursor-pointer"
             onClick={handlePlayClick}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-40 h-40 text-white ml-1"
+              className="w-40 h-40 text-[#c9ab81] hover:text-white ml-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -568,9 +568,9 @@ const HomeComponents = () => {
         </div>
         <CardDish />
 
-        <div className="bg-[#0f1d22] mt-10 relative">
+        <div className="bg-[#0f1d22] mt-10 relative ">
           <svg
-            className="absolute mt-10"
+            className="absolute mt-10 z-[40]"
             xmlns="http://www.w3.org/2000/svg"
             width="224.136"
             height="259.25"
@@ -589,7 +589,7 @@ const HomeComponents = () => {
             </div>
             <div className="flex justify-center mt-7">
               <svg
-                className="mt-6"
+                className="mt-6 z-[20]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="41.125"
                 height="9.146"

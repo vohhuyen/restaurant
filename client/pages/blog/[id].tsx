@@ -27,7 +27,7 @@ const BlogDetails = () => {
         try {
           console.log(`Fetching data for id: ${id}`);
           const response = await axios.get(GET_NEW_ENDPOINT(id));
-          console.log('API Response:', response.data); // Kiểm tra dữ liệu trả về từ API
+          console.log('API Response:', response.data); 
           setPost(response.data);
         } catch (error) {
           console.log("Have error when call api", error);

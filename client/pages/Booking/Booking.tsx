@@ -49,9 +49,10 @@ const Booking = () => {
                 </header>
 
                 <div className="bg-black">
-                   <FormBooking />
+                    <div className="z-[99]"><FormBooking /></div>
+                   
 
-                    <div className="w-full  border-custom-brown absolute border-t  my-0 width-full"></div>
+                    <div className="w-full  border-custom-brown absolute border-t my-0 width-full"></div>
 
                     <div className="LocationContactInformation bg-black mx-[70px]">
                         <div className=" flex justify-between  my-[100px]">
@@ -63,7 +64,7 @@ const Booking = () => {
                           
 
 
-                            <div className="w-2/5  shadow-md bg-transparent  justify-between item-center  mr-[10%]  ">
+                            <div className="w-2/5  shadow-md bg-transparent justify-between item-center  mr-[10%]  ">
                              
                                 <div className="form1 mt-12">
                                     <h6 className="text-center text-custom text-[#C9AB81] font-miniver font-thin italic">Visit us</h6>

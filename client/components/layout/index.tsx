@@ -14,8 +14,8 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="nav-md relative bg-black ">
-      <div className="w-px z-[20] border-l border-custom-brown absolute left-28 h-full"></div>
-      <div className="w-px z-[20] border-l border-custom-brown absolute right-28 top-0 h-full"></div>
+      <div className="w-px z-[2] border-l border-custom-brown absolute left-28 h-full"></div>
+      <div className="w-px z-[2] border-l border-custom-brown absolute right-28 top-0 h-full"></div>
 
       <div className="bg-none absolute flex justify-between w-full z-[11]">
         <div className="float-left justify-center items-center p-[25px] z-[15]">
