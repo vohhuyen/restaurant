@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // /** @type {import('next').NextConfig} */
 const nextConfig = {};
 // next.config.mjs
@@ -22,3 +23,9 @@ export default {
 };
 
 // export default nextConfig;
+=======
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default nextConfig;
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db

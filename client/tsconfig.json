@@ -21,6 +21,10 @@
       "@/*": ["./*"]
     }
   },
+<<<<<<< HEAD
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/layout/Footer.tsx"],
+=======
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/map.tsx"],
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
   "exclude": ["node_modules"]
 }

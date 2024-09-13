@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const express = require("express");
 // const { Booking, getBooking, getBookings, deleteBooking , updateBooking, getBookingByType} = require("../controllers/bookingController.js");
 
@@ -45,4 +46,18 @@ router.get("/user/:userId", getBookingsByUser);
 // validate
 router.get("/validate/:idTable/:selectedDate", validateBooking)
 
+=======
+const express = require("express");
+const { Booking, getBooking, getBookings, deleteBooking , updateBooking} = require("../controllers/bookingController.js");
+
+const router = express.Router();
+
+router.put("/booking/:id", Booking);
+router.get("/booking/:idUser", getBooking);
+router.get("/booking", getBookings);
+router.delete("/booking/:idBooking", deleteBooking);
+router.put("/booking/update/:idBooking", updateBooking);
+
+
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
 module.exports = router;

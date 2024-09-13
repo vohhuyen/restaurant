@@ -1,7 +1,10 @@
 const User = require("../models/User.js");
 const multer = require('multer');
 const path = require('path');
+<<<<<<< HEAD
 const jwt = require("jsonwebtoken");
+=======
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -76,6 +79,7 @@ const getUserByName = async (req, res, next) => {
         next(err);
     }
 };
+<<<<<<< HEAD
 const getUserProfile = async (req, res, next) => {
     try {
         const token = req.cookies.auth_token || req.headers.authorization.split(" ")[1];
@@ -88,6 +92,8 @@ const getUserProfile = async (req, res, next) => {
         next(err);
     }
 }
+=======
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
 
 module.exports = {
     updateUser,
@@ -95,5 +101,8 @@ module.exports = {
     getUser,
     getUsers,
     getUserByName,
+<<<<<<< HEAD
     getUserProfile
+=======
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
 };

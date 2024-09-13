@@ -17,7 +17,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const register = async (req, res, next) => {
+<<<<<<< HEAD
     console.log("body", req.body);
+=======
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
     try {
         upload.single('img')(req, res, async function (err) {
             if (err) {
@@ -33,7 +36,11 @@ const register = async (req, res, next) => {
             });
 
             await newUser.save();
+<<<<<<< HEAD
             res.status(200).json({ newUser });
+=======
+            res.status(200).send("User has been created.");
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
         });
     } catch (err) {
         next(err);
@@ -63,6 +70,7 @@ const login = async (req, res, next) => {
         next(err);
     }
 };
+<<<<<<< HEAD
 const checkEmailExists = async (req, res) => {
     const { email } = req.body;
     const user = await User.findOne({ email }); // Tìm kiếm người dùng với email
@@ -76,4 +84,10 @@ module.exports = {
     register,
     login,
     checkEmailExists
+=======
+
+module.exports = {
+    register,
+    login,
+>>>>>>> 862becd20bdc1a1865e710e1615e0bacfa2b37db
 };
