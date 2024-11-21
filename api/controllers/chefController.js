@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
         cb(null, 'uploads/');
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname)); // Tạo tên file duy nhất
+        cb(null, Date.now() + path.extname(file.originalname));
     }
 });
 const upload = multer({ storage: storage });
@@ -20,15 +20,12 @@ const createChef = async (req, res, next) => {
             if (err) {
                 return next(err);
             }
-            console.log("cbi lay du lieu ne");
-            console.log(req.body);
             const newUser = new User({
                 ...req.body,
                 image: req.file ? `uploads/${req.file.filename}` : null, 
             });
-            console.log("den doan cuoi roi ne!")
             await newUser.save();
-            res.status(200).send("User has been created.");
+            res.status(200).json(newUser);
         });
     } catch (err) {
         next(err);
@@ -37,14 +34,14 @@ const createChef = async (req, res, next) => {
 
 const updateUser = async (req, res, next) => {
     try {
-        upload.single('img')(req, res, async function (err) {
+        upload.single('image')(req, res, async function (err) {
             if (err) {
                 return next(err);
             }
             const updateData = { ...req.body};
             if (req.file) {
                 const filePath = req.file.path.replace(/\\/g, '/');
-                updateData.img = filePath;            
+                updateData.image = filePath;            
             }
             const updatedUser = await User.findByIdAndUpdate(
                 req.params.id,

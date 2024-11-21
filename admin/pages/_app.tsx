@@ -13,6 +13,7 @@ import '../public/vendors/jqvmap/dist/jqvmap.min.css';
 import '../public/vendors/bootstrap-daterangepicker/daterangepicker.css';
 import '../public/build/css/custom.min.css';
 import { Provider } from 'react-redux';
+import Head from 'next/head';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -32,9 +33,19 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     return null; // Hoặc một spinner/loading component
   }
 
-  return <Provider store={store}>
+  return (
+    <>
+   <Head>
+        <link rel="icon" href="/footer-logo.webp" />
+        <title>Admin | Moonlit Vintage</title>
+      </Head>
+      <Provider store={store}>
   <Component {...pageProps} />
   </Provider>;
+  </>
+  )
+  
+  
 };
 
 export default MyApp;

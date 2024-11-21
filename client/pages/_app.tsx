@@ -1,14 +1,18 @@
+// pages/_app.tsx\
 import React from 'react';
-import { AppProps } from 'next/app';
+// pages/_app.tsx
+import { Provider } from 'react-redux';
 import '../styles/globals.css';
-// import { Inter } from 'next/font/google';
+import type { AppProps } from 'next/app';
+import Footer from '../components/layout/Footer';
+import { store } from '@/store/store';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </>
-  ) 
-};
+    </Provider>
+  );
+}
 
 export default MyApp;

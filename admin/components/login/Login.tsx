@@ -5,7 +5,7 @@ import { setCookie } from 'nookies';
 import React, { useEffect, useState } from 'react'
 
 const Login = () => {
-    const [name, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const router = useRouter();
@@ -14,9 +14,9 @@ const Login = () => {
     const handleSubmit =async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setError('');
-        
+
         try {
-            const response = await axios.post(LOGIN_ENDPOINT, { name, password });
+            const response = await axios.post(LOGIN_ENDPOINT, { email, password });
             console.log("cookie",response)
             localStorage.setItem('user', JSON.stringify(response.data));
             if (response.status === 200) {
@@ -46,7 +46,7 @@ const Login = () => {
                             <form onSubmit={handleSubmit}>
                                 <h1>Login Form</h1>
                                 <div>
-                                    <input type="text" className="form-control" placeholder="Username"  value={name} onChange={(e) => setUsername(e.target.value)} required />
+                                    <input type="text" className="form-control" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
                                 <div>
                                     <input type="password" className="form-control" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
@@ -68,8 +68,8 @@ const Login = () => {
                                     <br />
 
                                     <div>
-                                        <h1><i className="fa fa-paw"></i> Gentelella Alela!</h1>
-                                        <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                                        <h1><i className="fa fa-paw"></i> Moonlit Vintage!</h1>
+                                        <p>©2016 All Rights Reserved. Moonlit Vintage! is a Bootstrap 4 template. Privacy and Terms</p>
                                     </div>
                                 </div>
                             </form>

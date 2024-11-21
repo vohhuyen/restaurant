@@ -4,25 +4,22 @@ const { Schema } = mongoose;
 
 // Define the sub-schema for evalue
 const evalueSchema = new mongoose.Schema({
-    star: { type: String, required: true },
-    comment: { type: String, required: true },
+    star: { type: Number, required: true },
+    comment: { type: String},
     idUser: { type: mongoose.Schema.Types.ObjectId, required: true }
 });
 
 const DishSchema = new mongoose.Schema({
     name: { type: String, required: true },
     chef: {
-        type: [Schema.Types.ObjectId],
-        require: true
+        type: [String]
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     evalue: [evalueSchema], // Use the sub-schema here
     image: {
-        type:[String],
-        require: true
+        type:[String]
     },
     price: {
         type: String,

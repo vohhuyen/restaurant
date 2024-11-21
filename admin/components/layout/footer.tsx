@@ -4,7 +4,7 @@ const footer = () => {
   return (
     <footer>
         <div className="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        Moonlit Vintage - Admin Page by <a href="https://colorlib.com">Teamd24</a>
         </div>
         <div className="clearfix"></div>
     </footer>
